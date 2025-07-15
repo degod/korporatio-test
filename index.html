@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BVI Company Form</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>Time to start your BVI company!</h1>
+      <p>All questions below must be answered. Take your time, and if you need to take a break, the form will save automatically and you can continue later. Good luck!</p>
+    </header>
+
+    <div class="stepper">
+      <div class="step active">
+        <div class="step-number">1</div>
+        <div class="step-title">Company Details</div>
+      </div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <div class="step-title">Shareholders</div>
+      </div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <div class="step-title">Beneficial Owner</div>
+      </div>
+      <div class="step">
+        <div class="step-number">4</div>
+        <div class="step-title">Director</div>
+      </div>
+    </div>
+
+    <form id="bvi-form">
+      <!-- Point of Contact -->
+      <section>
+        <h2>Point of contact</h2>
+        <div class="row">
+          <div class="left">
+            <p>
+              This is the individual that we will communicate with. Communication to Company does not establish any form to be done to the company once incorporated will be sent to the same email address. You can change it later if required.
+            </p>
+          </div>
+          <div class="right">
+            <div class="form-group" id="fullnameGroup">
+              <label for="fullname">Full name</label>
+              <div class="input-wrapper">
+                <input type="text" id="fullname" placeholder="Enter your fullname">
+                <span class="error-icon">🅧</span>
+                <span class="success-icon">✅</span>
+              </div>
+              <div class="error-message">Please enter your fullname</div>
+            </div>
+
+            <div class="form-group" id="emailGroup">
+              <label for="email">Email Address</label>
+              <div class="input-wrapper">
+                <input type="email" id="email" placeholder="Enter your email">
+                <span class="error-icon">🅧</span>
+                <span class="success-icon">✅</span>
+              </div>
+              <div class="error-message">Please enter a valid email address.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Company Information -->
+      <section>
+        <h2>Company information</h2>
+        <div class="row">
+          <div class="left">
+            <p>Every company must have a name and a designation. For the company name you can use both letters and numbers, but not special symbols. For the designation, there are no actual different between one or another.</p>
+          </div>
+          <div class="right">
+            <div class="form-group" id="companyGroup">
+              <label for="company">Company name</label>
+              <div class="input-wrapper">
+                <input type="text" id="company" placeholder="Enter your Company name">
+                <span class="error-icon">🅧</span>
+                <span class="success-icon">✅</span>
+              </div>
+              <div class="error-message">Please enter your Company name</div>
+            </div>
+            <div class="form-group" id="altCompanyGroup">
+              <label for="altCompany">Alternative company name</label>
+              <div class="input-wrapper">
+                <input type="text" id="altCompany" placeholder="Enter your Alternative company name">
+                <span class="error-icon">🅧</span>
+                <span class="success-icon">✅</span>
+              </div>
+              <div class="error-message">Please enter your Alternative company name</div>
+            </div>
+            <div class="form-group" id="companyDesGroup">
+              <label for="companyDes">Company designation</label>
+              <div class="input-wrapper">
+                <select id="companyDes">
+                  <option value="">Select the option that you prefer</option>
+                  <option value="Ltd">Ltd</option>
+                  <option value="Inc">Inc</option>
+                </select>
+                <span class="error-icon">🅧</span>
+                <span class="success-icon">✅</span>
+              </div>
+              <div class="error-message">Please select your Company designation</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Countries of Interest -->
+      <section>
+        <h2>Countries of interest</h2>
+        <div class="row">
+          <div class="left">
+            <p>
+              We are required to check that the company wil not be interacting with forbidden locators. For jurisdiction of operation if you are sione, select your countryof residensy. Ifyou have more shareholdes, pick the most relevant. For target jurisdiction select 1-3 countries that are elevant. Even if you wil have clients from other countres, its ok.
+            </p>
+          </div>
+          <div class="right">
+            <div class="form-group" id="jurisdictionGroup">
+              <label for="jurisdiction">Jurisdiction of operation</label>
+              <div class="input-wrapper">
+                <select id="jurisdiction" style="width: 100%;">
+                  <option value="">Select the country where you are located</option>
+                </select>
+                <span class="error-icon">🅧</span>
+                <span class="success-icon">✅</span>
+              </div>
+              <div class="error-message">Please select your country</div>
+            </div>
+
+            <div class="form-group" id="target-jurisdictionsGroup">
+              <label for="target-jurisdictions">Target jurisdictions</label>
+              <div class="input-wrapper">
+                <select id="target-jurisdictions" multiple style="width: 100%;">
+                  <option value="">Select at least on target jurisdiction</option>
+                </select>
+                <span class="error-icon">🅧</span>
+                <span class="success-icon">✅</span>
+              </div>
+              <div class="error-message">Please select at least one country</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Shares Structure -->
+      <section>
+        <h2>Shares structure</h2>
+        <div class="row">
+          <div class="left">
+            <p>
+              All companies must have at least 1 share. Apart from that, you can structure things in whatever way you like. Issued shares are shares that will be distributed from day 1. Unissued shares are shares that you can distribute later on, i.e. to future team members or investors. The value per share represents your personal liability, so, if you wish to reduce risks, just pick the smallest number.
+            </p>
+          </div>
+          <div class="right">
+            <div class="form-group" id="sharesGroup">
+              <label for="shares">Number of shares</label>
+              <div class="input-wrapper">
+                <select id="shares">
+                  <option value="">Select how many shares you wish to have</option>
+                  <option value="1">1</option>
+                  <option value="10">10</option>
+                  <option value="100">100</option>
+                </select>
+                <span class="error-icon">🅧</span>
+                <span class="success-icon">✅</span>
+              </div>
+              <div class="error-message">Please select how many shares you want</div>
+            </div>
+
+            <div class="radio-group">
+              <label class="radio-label">Are all shares issued?</label>
+              <label class="radio-option">
+                <input type="radio" name="shares_issued" value="yes" />
+                <span>Yes</span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="shares_issued" value="no" />
+                <span>No</span>
+              </label>
+            </div>
+
+            <div class="form-group" id="sharesIssGroup">
+              <label for="sharesIss">Number of issued shares</label>
+              <div class="input-wrapper">
+                <input id="sharesIss" type="text" placeholder="Write how many shares you wish to issue on day 1" />
+                <span class="error-icon">🅧</span>
+                <span class="success-icon">✅</span>
+              </div>
+              <div class="error-message">Please select how many shares you want to issue</div>
+            </div>
+
+            <div class="form-group" id="sharesValGroup">
+              <label for="sharesVal">Value per share</label>
+              <div class="input-wrapper">
+                <select id="sharesVal">
+                  <option value="">Select how much each share is worth</option>
+                  <option value="1">$1</option>
+                  <option value="10">$10</option>
+                  <option value="100">$100</option>
+                </select>
+                <span class="error-icon">🅧</span>
+                <span class="success-icon">✅</span>
+              </div>
+              <div class="error-message">Please select how much each share is worth</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <div class="form-footer">
+        <button type="button" class="back">&larr; &nbsp; BACK</button>
+        <button type="button" class="save-exit">
+          I know the form is not valid but I wish to <br>
+          <strong>SAVE & EXIT</strong> anyway :)
+        </button>
+        <button type="submit" class="next">NEXT &nbsp; &rarr;</button>
+      </div>
+    </form>
+  </main>
+
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
